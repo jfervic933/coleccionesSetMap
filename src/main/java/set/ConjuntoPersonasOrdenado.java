@@ -13,7 +13,7 @@ import java.util.TreeSet;
 public class ConjuntoPersonasOrdenado {
     public static void main(String[] args) {
 	
-        // Si queremos un set ordenado, entonces mejor TreeSet
+        // Si queremos un set ordenado, entonces usamos TreeSet
         // En este ejemplo se ordenan las personas por NIF y no permite
         // duplicados de NIF
         // Es necesario que Persona tenga los métodos equals y hashcode implementados

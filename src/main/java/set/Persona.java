@@ -8,7 +8,7 @@ import java.util.Objects;
  *
  * @author J. Carlos F. Vico <jcarlosvico@maralboran.es>
  */
-public class Persona {
+public class Persona implements Comparable<Persona>{
 
     private String nif;
     private String nombre;
@@ -63,9 +63,6 @@ public class Persona {
     public int hashCode() {
         int hash = 5;
         hash = 89 * hash + Objects.hashCode(this.nif);
-        hash = 89 * hash + Objects.hashCode(this.nombre);
-        hash = 89 * hash + Objects.hashCode(this.apellidos);
-        hash = 89 * hash + Objects.hashCode(this.fechaNacimiento);
         return hash;
     }
 
@@ -84,16 +81,12 @@ public class Persona {
         if (!Objects.equals(this.nif, other.nif)) {
             return false;
         }
-        if (!Objects.equals(this.nombre, other.nombre)) {
-            return false;
-        }
-        if (!Objects.equals(this.apellidos, other.apellidos)) {
-            return false;
-        }
-        if (!Objects.equals(this.fechaNacimiento, other.fechaNacimiento)) {
-            return false;
-        }
         return true;
+    }
+
+    @Override
+    public int compareTo(Persona o) {
+        return this.nif.compareToIgnoreCase(o.nif);
     }
     
 }
